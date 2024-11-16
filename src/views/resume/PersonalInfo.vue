@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from "vue";
-import {Mail, CityOne, Local, MessageOne, Github,DocumentFolder} from "@icon-park/vue-next"
+import {Mail, CityOne, Local, MessageOne, Github, DocumentFolder} from "@icon-park/vue-next"
 import {ElMessage} from "element-plus";
 
 const src = "https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg"
@@ -17,7 +17,7 @@ let clipboard = navigator.clipboard || {
   }
 }
 
-const copyLink = async (url) => {
+const copyLink = async (url: string) => {
   try {
     await clipboard.writeText(url);
     ElMessage.success('Email address copied to clipboard!');
@@ -26,7 +26,7 @@ const copyLink = async (url) => {
   }
 };
 
-const get_jecoco_report = (url) => {
+const open_link_new_window = (url: string) => {
   window.open(url);
 }
 </script>
@@ -68,7 +68,7 @@ const get_jecoco_report = (url) => {
           </template>
         </el-form-item>
 
-        <el-form-item @click="get_jecoco_report('https://www.linkedin.com/in/chengxiang-luo/')">
+        <el-form-item @click="open_link_new_window('https://www.linkedin.com/in/chengxiang-luo/')">
           <template #default="scope">
             <el-icon>
               <message-one theme="outline" size="20" fill="#333"/>
@@ -77,7 +77,7 @@ const get_jecoco_report = (url) => {
           </template>
         </el-form-item>
 
-        <el-form-item @click="get_jecoco_report('https://github.com/netluo')">
+        <el-form-item @click="open_link_new_window('https://github.com/netluo')">
           <template #default="scope">
             <el-icon>
               <github theme="outline" size="20" fill="#333"/>
@@ -86,7 +86,7 @@ const get_jecoco_report = (url) => {
           </template>
         </el-form-item>
 
-        <el-form-item @click="get_jecoco_report('https://www.lingxi.site/')">
+        <el-form-item @click="open_link_new_window('https://www.lingxi.site/')">
           <template #default="scope">
             <el-icon>
               <DocumentFolder theme="outline" size="20" fill="#333"/>
@@ -102,7 +102,7 @@ const get_jecoco_report = (url) => {
 
 <style scoped>
 .avatar-top {
-  margin-top: 160px;
+  margin-top: 10%;
   align-items: center;
 }
 

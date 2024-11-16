@@ -1,24 +1,18 @@
 <script lang="ts" setup>
-import { toggleDark } from "~/composables";
 </script>
 
 <template>
-  <el-menu class="layout-header" mode="horizontal">
-    <el-menu-item index="1">Element Plus</el-menu-item>
-    <el-menu-item index="2">
-      <template #title>Workspace</template>
-    </el-menu-item>
-    <el-menu-item index="3" disabled>Info</el-menu-item>
-    <el-menu-item index="4">Orders</el-menu-item>
-    <el-menu-item h="full" @click="toggleDark()">
-      <button
-        class="border-none w-full bg-transparent cursor-pointer"
-        style="height: var(--ep-menu-item-height)"
-      >
-        <i inline-flex i="dark:ep-moon ep-sunny" />
-      </button>
-    </el-menu-item>
-  </el-menu>
+  <el-page-header>
+    <el-col :md="3"/>
+    <el-col :md="10">
+      <el-anchor :offset="70" direction="horizontal">
+        <el-anchor-link href="#summary" title="SUMMARY"/>
+        <el-anchor-link href="#education" title="EDUCATION"/>
+      </el-anchor>
+    </el-col>
+    <el-col :md="10">
+    </el-col>
+  </el-page-header>
 </template>
 <style scoped>
 .layout-header {
