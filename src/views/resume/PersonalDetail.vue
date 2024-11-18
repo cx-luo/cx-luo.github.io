@@ -43,7 +43,7 @@ const positions = ref([
   {
     title: 'Zhifei Luzhu Biopharmaceutical Co., Ltd.',
     location: 'Beijing, China',
-    role: 'Senior Network & Information Systems Engineer',
+    role: 'Senior Network & IT Systems Engineer',
     date: 'Jul 2017 - Apr 2021',
     responsibilities: [
       "Designed and managed network architecture for enterprise environments, encompassing around 1000+ routers, switches, and firewalls.",
@@ -70,7 +70,7 @@ const educations = ref([
   {
     institution: 'North China Electric Power University',
     location: 'Beijing, China',
-    degree: 'Master of Engineering in Computer Technology (AI Track)',
+    degree: 'ME in Computer Technology (AI Focus)',
     dates: 'Sep 2020 - Jun 2023',
     courses: [
       'Data Warehousing and Data Mining',
@@ -84,7 +84,7 @@ const educations = ref([
   {
     institution: 'Shijiazhuang University',
     location: 'Shijiazhuang, China',
-    degree: 'Bachelor of Science in Information and Computing Science',
+    degree: 'BS in Information and Computing Science',
     dates: 'Sep 2011 - Jun 2015',
     courses: [
       'Computer Organisation and Architecture',
@@ -124,10 +124,7 @@ const educations = ref([
       <el-scrollbar height="86vh">
         <el-row>
           <el-col :md="20" :sm="8" :xs="18">
-            <el-row>
-              <el-text class="s4" id="summary">SUMMARY</el-text>
-            </el-row>
-            <el-row class="my-el-row">
+            <el-row id="summary" class="my-el-row">
               <el-text class="justified-text">Experienced technical
                 professional with 8+ years expertise in network engineering, database administration, and full-stack
                 development. Proven ability to design secure network architectures, optimize database performance, and
@@ -140,12 +137,20 @@ const educations = ref([
               <el-text class="s4" id="education">EDUCATION</el-text>
             </el-row>
 
-            <el-row v-for="(edu, index) in educations" :key="index">
-              <h3>{{ edu.institution }}<span class="s5">{{ edu.location }}</span></h3>
-              <p class="s6">{{ edu.degree }} <span class="s7">{{ edu.dates }}</span></p>
-              <p class="h4">Courses: <span class="s7">{{ edu.courses.join(', ') }}</span></p>
-              <p class="h4" v-if="edu.thesis">Thesis: <i>{{ edu.thesis }}</i></p>
-            </el-row>
+            <div v-for="(edu, index) in educations" :key="index">
+              <el-row>
+                <div>
+                  <el-col><span class="h3">{{ edu.institution }}</span><span class="s5">{{ edu.location }}</span>
+                    <span class="s6">{{ edu.degree }} <span class="s7">{{ edu.dates }}</span></span>
+                  </el-col>
+                </div>
+                <p class="h4">Courses: <span class="s7">{{ edu.courses.join(', ') }}</span></p>
+                <p class="h4" v-if="edu.thesis">Thesis: <i>{{ edu.thesis }}</i></p>
+              </el-row>
+              <!--              <span class="h3">{{ edu.institution }}<span class="s5">{{ edu.location }}</span></span>-->
+              <!--              <p class="s6">{{ edu.degree }} <span class="s7">{{ edu.dates }}</span></p>-->
+
+            </div>
 
             <el-row class="my-el-row">
               <el-text id="experience" class="s4">EXPERIENCE</el-text>
@@ -171,13 +176,13 @@ const educations = ref([
               <el-text class="s4" id="technical">TECHNICAL SKILLS</el-text>
             </el-row>
             <el-row>
-                <p class="h3">Programming Languages: <span class="s10">Python, C/C++, SQL, Java, MATLAB, JavaScript/TypeScript, Golang, shell</span>
-                </p>
-                <p class="h3">Deep Learning Frameworks: <span
-                    class="s10">TensorFlow, PyTorch, Keras, Caffe</span>
-                </p>
-                <p class="h3">Libraries &amp; Tools: <span class="s10">NumPy, Pandas, Scikit-learn, OpenCV, NLTK, Git, Docker, Linux, VUE, etc.</span>
-                </p>
+              <p class="h3">Programming Languages: <span class="s10">Python, C/C++, SQL, Java, MATLAB, JavaScript/TypeScript, Golang, shell</span>
+              </p>
+              <p class="h3">Deep Learning Frameworks: <span
+                  class="s10">TensorFlow, PyTorch, Keras, Caffe</span>
+              </p>
+              <p class="h3">Libraries &amp; Tools: <span class="s10">NumPy, Pandas, Scikit-learn, OpenCV, NLTK, Git, Docker, Linux, VUE, etc.</span>
+              </p>
             </el-row>
             <el-row>
               <el-text class="s4" id="cert">CERTIFICATIONS</el-text>
@@ -276,7 +281,7 @@ a {
   font-family: serif;
   font-weight: bold;
   font-size: 11pt;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .s5 {
@@ -295,7 +300,7 @@ a {
 }
 
 .h4, h4 {
-  margin-left: 20px;
+  margin-left: 30px;
   font-family: serif;
   font-weight: bold;
   font-size: 10.5pt;
@@ -306,7 +311,8 @@ a {
   font-style: italic;
   font-weight: normal;
   font-size: 10.5pt;
-  text-align: left;
+  text-align: center;
+  margin-left: 20px;
 }
 
 .s8 {
