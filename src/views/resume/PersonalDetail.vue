@@ -79,7 +79,7 @@ const educations = ref([
       'Advanced Computer Networks',
       'Artificial Intelligence'
     ],
-    // thesis: 'Study on database performance optimisation under SaaS multi-tenancy model based on deep learning'
+    thesis: 'Study on database performance optimisation under SaaS multi-tenancy model based on deep learning'
   },
   {
     institution: 'Shijiazhuang University',
@@ -142,10 +142,9 @@ const educations = ref([
 
             <el-row v-for="(edu, index) in educations" :key="index">
               <h3>{{ edu.institution }}<span class="s5">{{ edu.location }}</span></h3>
-              <h4 class="s6">{{ edu.degree }} <span class="s7">{{ edu.dates }}</span></h4>
-              <el-row>
-                <h4>Courses: <span class="s7">{{ edu.courses.join(', ') }}</span></h4>
-                <h4 v-if="edu.thesis">Thesis: <i>{{ edu.thesis }}</i></h4></el-row>
+              <p class="s6">{{ edu.degree }} <span class="s7">{{ edu.dates }}</span></p>
+              <p class="h4">Courses: <span class="s7">{{ edu.courses.join(', ') }}</span></p>
+              <p class="h4" v-if="edu.thesis">Thesis: <i>{{ edu.thesis }}</i></p>
             </el-row>
 
             <el-row class="my-el-row">
@@ -172,27 +171,21 @@ const educations = ref([
               <el-text class="s4" id="technical">TECHNICAL SKILLS</el-text>
             </el-row>
             <el-row>
-              <h3>Programming Languages<span class="s9">: </span><span class="p">Python, C/C++, SQL, Java, MATLAB, JavaScript/TypeScript, Golang, shell</span>
-              </h3></el-row>
-            <el-row>
-              <h3>Deep Learning Frameworks<span class="s9">: </span><span
-                  class="s10">TensorFlow, PyTorch, Keras, Caffe</span>
-              </h3>
-            </el-row>
-            <el-row>
-              <h3>Libraries &amp; Tools<span class="s9">: </span><span class="s10">NumPy, Pandas, Scikit-learn, OpenCV, NLTK, Git, Docker, Linux, VUE, etc.</span>
-              </h3>
+                <p class="h3">Programming Languages: <span class="s10">Python, C/C++, SQL, Java, MATLAB, JavaScript/TypeScript, Golang, shell</span>
+                </p>
+                <p class="h3">Deep Learning Frameworks: <span
+                    class="s10">TensorFlow, PyTorch, Keras, Caffe</span>
+                </p>
+                <p class="h3">Libraries &amp; Tools: <span class="s10">NumPy, Pandas, Scikit-learn, OpenCV, NLTK, Git, Docker, Linux, VUE, etc.</span>
+                </p>
             </el-row>
             <el-row>
               <el-text class="s4" id="cert">CERTIFICATIONS</el-text>
             </el-row>
+
             <el-row>
               <p class="s5">MySQL Oracle Certiﬁed Professional</p>
-            </el-row>
-            <el-row>
               <p class="s5">Huawei Certiﬁed Network Professional</p>
-            </el-row>
-            <el-row>
               <p class="s5">OceanBase Certiﬁed Assistant</p>
             </el-row>
 
@@ -279,20 +272,22 @@ a {
   font-size: 10.5pt;
 }
 
-h3 {
+.h3, h3 {
   font-family: serif;
   font-weight: bold;
   font-size: 11pt;
+  margin-left: 30px;
 }
 
 .s5 {
+  margin-left: 30px;
   font-family: serif;
   font-weight: bold;
   font-size: 10pt;
 }
 
 .s6 {
-  margin-left: 40px;
+  margin-left: 20px;
   font-family: serif;
   font-style: italic;
   font-weight: normal;
@@ -300,18 +295,18 @@ h3 {
 }
 
 .h4, h4 {
-  margin-left: 40px;
+  margin-left: 20px;
   font-family: serif;
   font-weight: bold;
   font-size: 10.5pt;
 }
 
 .s7 {
-  margin-left: 40px;
   font-family: serif;
   font-style: italic;
   font-weight: normal;
   font-size: 10.5pt;
+  text-align: left;
 }
 
 .s8 {
@@ -320,7 +315,7 @@ h3 {
   font-size: 10.5pt;
 }
 
-h2 {
+.h2, h2 {
   font-family: serif;
   font-weight: bold;
   font-size: 14pt;
