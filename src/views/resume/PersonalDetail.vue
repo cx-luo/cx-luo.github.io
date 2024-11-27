@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {ToTop} from "@icon-park/vue-next";
 import {ref} from "vue";
+import ProjectExperience from "~/components/layouts/projectExperience.vue";
 
 const containerRef = ref()
 const positions = ref([
@@ -115,6 +116,7 @@ const educations = ref([
           <el-anchor-link href="#technical" title="TECHNICAL SKILLS"/>
           <el-anchor-link href="#cert" title="CERTIFICATIONS"/>
           <el-anchor-link href="#other" title="OTHER CONTRIBUTIONS"/>
+          <el-anchor-link href="#projectExperience" title="PROJECT EXPERIENCE"/>
         </el-anchor>
       </el-col>
       <el-col :md="10">
@@ -123,7 +125,7 @@ const educations = ref([
     <div ref="containerRef" style="margin-top: 20px">
       <el-scrollbar height="86vh">
         <el-row>
-          <el-col :md="20" :sm="8" :xs="18">
+          <el-col :md="20" :sm="20" :xs="18">
             <el-row id="summary" class="my-el-row">
               <el-text class="justified-text">Experienced technical
                 professional with 8+ years expertise in network engineering, database administration, and full-stack
@@ -212,6 +214,7 @@ const educations = ref([
           </el-col>
           <el-col :md="4" :sm="8" :xs="18"/>
         </el-row>
+        <project-experience/>
       </el-scrollbar>
     </div>
     <el-backtop target=".el-scrollbar__wrap" :right="60" :bottom="60">
