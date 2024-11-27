@@ -2,25 +2,24 @@
 import {ref} from "vue";
 
 const elabxList = [
-  "src/assets/elabx.jpg",
-  "src/assets/elabx2.jpg",
-  "src/assets/elabx3.jpg",
+  "https://img.lingxi.site/202411271846005.jpg",
+  "https://img.lingxi.site/202411271846983.jpg",
 ]
 const projectList = [
   {
     name: "reaction condition predict",
-    img: "src/assets/conditionPredict.jpg",
-    previewList: ["src/assets/conditionPredict.jpg"],
+    img: "https://img.lingxi.site/202411271846929.jpg",
+    previewList: ["https://img.lingxi.site/202411271846929.jpg"],
     description: "",
   },
   {
     name: "retrosynthesis",
-    img: "src/assets/retrosynthesis.jpg",
-    previewList: ["src/assets/retrosynthesis.jpg"],
+    img: "https://img.lingxi.site/202411271846030.jpg",
+    previewList: ["https://img.lingxi.site/202411271846030.jpg"],
     description: "",
   },
   {
-    name: "eLabX - AI driven ELN", img: "src/assets/elabx2.jpg", previewList: elabxList, description: "",
+    name: "eLabX - AI driven ELN", img: "https://img.lingxi.site/202411271846005.jpg", previewList: elabxList, description: "",
   },
 ]
 // const showViewer = ref(false)
