@@ -77,7 +77,7 @@ const open_link_new_window = (url: string) => {
           </template>
         </el-form-item>
 
-        <el-form-item @click="open_link_new_window('https://github.com/netluo')">
+        <el-form-item @click="open_link_new_window('https://github.com/cx-luo')">
           <template #default="scope">
             <el-icon>
               <github theme="outline" size="20" fill="#333"/>
