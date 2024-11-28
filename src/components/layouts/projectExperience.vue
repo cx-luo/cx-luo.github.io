@@ -2,8 +2,10 @@
 import {ref} from "vue";
 
 const elabxList = [
-  "https://img.lingxi.site/202411271846005.jpg",
   "https://img.lingxi.site/202411271846983.jpg",
+  "https://img.lingxi.site/202411271846005.jpg",
+  "https://img.lingxi.site/202411280956282.png",
+  "https://img.lingxi.site/202411280949235.png",
 ]
 const projectList = [
   {
@@ -19,7 +21,10 @@ const projectList = [
     description: "",
   },
   {
-    name: "eLabX - AI driven ELN", img: "https://img.lingxi.site/202411271846005.jpg", previewList: elabxList, description: "",
+    name: "eLabX - AI driven ELN",
+    img: "https://img.lingxi.site/202411271846005.jpg",
+    previewList: elabxList,
+    description: "",
   },
 ]
 // const showViewer = ref(false)
@@ -48,7 +53,7 @@ const projectList = [
     <el-row>
       <el-text class="s4" id="projectExperience">PROJECT EXPERIENCE</el-text>
     </el-row>
-    <div >
+    <div>
       <el-row>
         <el-col v-for="(item,) in projectList" :md="7" :sm="10" :xs="18">
 

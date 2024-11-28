@@ -3,7 +3,7 @@ import {ref} from "vue";
 import {Mail, CityOne, Local, MessageOne, Github, DocumentFolder} from "@icon-park/vue-next"
 import {ElMessage} from "element-plus";
 
-const src = "https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg"
+const src = "https://img.lingxi.site/202411280923154.png"
 const size = ref(30)
 
 let clipboard = navigator.clipboard || {
