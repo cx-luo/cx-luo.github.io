@@ -84,10 +84,4 @@ const projectList = [
   font-size: 13pt;
   color: #0d84e5;
 }
-
-.s4 {
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 14pt;
-}
 </style>

@@ -9,6 +9,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     BaseHeader: typeof import('./components/layouts/BaseHeader.vue')['default']
     BaseSide: typeof import('./components/layouts/BaseSide.vue')['default']
+    Certifications: typeof import('./components/layouts/certifications.vue')['default']
+    Education: typeof import('./components/layouts/education.vue')['default']
     ElAnchor: typeof import('element-plus/es')['ElAnchor']
     ElAnchorLink: typeof import('element-plus/es')['ElAnchorLink']
     ElAside: typeof import('element-plus/es')['ElAside']
@@ -18,6 +20,7 @@ declare module 'vue' {
     ElCol: typeof import('element-plus/es')['ElCol']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElDivider: typeof import('element-plus/es')['ElDivider']
     ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElImage: typeof import('element-plus/es')['ElImage']
@@ -26,7 +29,11 @@ declare module 'vue' {
     ElRow: typeof import('element-plus/es')['ElRow']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSpace: typeof import('element-plus/es')['ElSpace']
+    ElTag: typeof import('element-plus/es')['ElTag']
     ElText: typeof import('element-plus/es')['ElText']
+    ItSkills: typeof import('./components/layouts/itSkills.vue')['default']
     ProjectExperience: typeof import('./components/layouts/projectExperience.vue')['default']
+    Summury: typeof import('./components/layouts/summury.vue')['default']
+    WorkExperience: typeof import('./components/layouts/workExperience.vue')['default']
   }
 }

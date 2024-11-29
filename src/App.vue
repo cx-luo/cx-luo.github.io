@@ -6,16 +6,12 @@
 <!--      </el-header>-->
       <el-container>
         <el-col :md="3" :sm="8" :xs="18"/>
-        <!--        <el-col :md="6" :sm="8" :xs="18">-->
         <el-aside>
           <PersonalInfo/>
         </el-aside>
-        <!--        </el-col>-->
-        <!--        -->
         <el-main>
           <personal-detail/>
         </el-main>
-        <!--        </el-col>-->
       </el-container>
     </el-container>
   </el-config-provider>
