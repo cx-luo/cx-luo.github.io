@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {ToTop} from "@icon-park/vue-next";
 import {ref} from "vue";
 import ProjectExperience from "~/components/layouts/projectExperience.vue";
 import WorkExperience from "~/components/layouts/workExperience.vue";
@@ -30,7 +29,7 @@ const containerRef = ref()
       <el-scrollbar height="86vh">
         <el-row>
           <el-col :md="20" :sm="20" :xs="18">
-            <summury/>
+            <summary/>
 
             <education/>
 
@@ -61,9 +60,6 @@ const containerRef = ref()
         <project-experience/>
       </el-scrollbar>
     </div>
-    <el-backtop target=".el-scrollbar__wrap" :right="60" :bottom="60">
-      <ToTop/>
-    </el-backtop>
   </div>
 </template>
 

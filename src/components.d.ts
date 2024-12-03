@@ -29,11 +29,10 @@ declare module 'vue' {
     ElRow: typeof import('element-plus/es')['ElRow']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSpace: typeof import('element-plus/es')['ElSpace']
-    ElTag: typeof import('element-plus/es')['ElTag']
     ElText: typeof import('element-plus/es')['ElText']
     ItSkills: typeof import('./components/layouts/itSkills.vue')['default']
     ProjectExperience: typeof import('./components/layouts/projectExperience.vue')['default']
-    Summury: typeof import('./components/layouts/summury.vue')['default']
+    Summary: typeof import('./components/layouts/summary.vue')['default']
     WorkExperience: typeof import('./components/layouts/workExperience.vue')['default']
   }
 }

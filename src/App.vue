@@ -5,7 +5,7 @@
 <!--        <BaseHeader/>-->
 <!--      </el-header>-->
       <el-container>
-        <el-col :md="3" :sm="8" :xs="18"/>
+        <el-col :md="3" :sm="0" :xs="0"/>
         <el-aside>
           <PersonalInfo/>
         </el-aside>

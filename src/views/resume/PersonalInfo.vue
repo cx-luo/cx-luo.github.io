@@ -2,6 +2,7 @@
 import {ref} from "vue";
 import {Mail, CityOne, Local, MessageOne, Github, DocumentFolder} from "@icon-park/vue-next"
 import {ElMessage} from "element-plus";
+import {Icon} from "@iconify/vue";
 
 const src = "https://img.lingxi.site/202411280923154.png"
 const size = ref(30)
@@ -37,76 +38,62 @@ const open_link_new_window = (url: string) => {
       <el-avatar :src="src" :size="200"/>
       <div>
         <h2>Chengxiang Luo</h2>
-        <h3>罗呈祥</h3>
+        <el-text style="font-family: serif;font-weight: bold;color: black;">罗呈祥</el-text>
       </div>
-      <el-space direction="vertical" :size="15" alignment="flex-start">
-        <el-form-item>
-          <template #default="scope">
-            <el-icon>
-              <city-one/>
-            </el-icon>
-            Pharmaron
-          </template>
-        </el-form-item>
-
-        <el-form-item>
-          <template #default="scope">
-            <el-icon>
-              <local size="20" fill="#333"/>
-            </el-icon>
-            Beijing,China
-          </template>
-        </el-form-item>
-
-        <!--Email-->
-        <el-form-item @click="copyLink('andrew.luo1992[at]gmail[dot]com')">
-          <template #default="scope">
-            <el-icon>
-              <Mail theme="outline" size="20" fill="#333"/>
-            </el-icon>
-            <el-link class="my-el-link">Email</el-link>
-          </template>
-        </el-form-item>
-
-        <el-form-item @click="open_link_new_window('https://www.linkedin.com/in/chengxiang-luo/')">
-          <template #default="scope">
-            <el-icon>
-              <message-one theme="outline" size="20" fill="#333"/>
-            </el-icon>
-            <el-link class="my-el-link">LinkedIn</el-link>
-          </template>
-        </el-form-item>
-
-        <el-form-item @click="open_link_new_window('https://github.com/cx-luo')">
-          <template #default="scope">
-            <el-icon>
-              <github theme="outline" size="20" fill="#333"/>
-            </el-icon>
-            <el-link class="my-el-link">Github</el-link>
-          </template>
-        </el-form-item>
-
-        <el-form-item @click="open_link_new_window('https://www.lingxi.site/')">
-          <template #default="scope">
-            <el-icon>
-              <DocumentFolder theme="outline" size="20" fill="#333"/>
-            </el-icon>
-            <el-link class="my-el-link">Blog</el-link>
-          </template>
-        </el-form-item>
-
-      </el-space>
+      <div class="my-el-space">
+        <el-row>
+          <el-icon>
+            <city-one/>
+          </el-icon>
+          <el-link class="my-el-link" @click="open_link_new_window('https://www.pharmaron.com/')">Pharmaron</el-link>
+        </el-row>
+        <el-row>
+          <el-icon>
+            <local fill="#333"/>
+          </el-icon>
+          <el-text class="my-el-link">Beijing, China</el-text>
+        </el-row>
+        <el-row>
+          <el-icon>
+            <Mail theme="outline" size="20" fill="#333"/>
+          </el-icon>
+          <el-link class="my-el-link" @click="copyLink('andrew.luo1992[at]gmail[dot]com')">Email</el-link>
+        </el-row>
+        <el-row>
+          <Icon icon="jam:linkedin-square"/>
+          <el-link class="my-el-link" @click="open_link_new_window('https://www.linkedin.com/in/chengxiang-luo/')">
+            LinkedIn
+          </el-link>
+        </el-row>
+        <el-row>
+          <el-icon>
+            <github theme="outline" size="20" fill="#333"/>
+          </el-icon>
+          <el-link class="my-el-link" @click="open_link_new_window('https://github.com/cx-luo')">Github</el-link>
+        </el-row>
+        <el-row>
+          <el-icon>
+            <DocumentFolder theme="outline" size="20" fill="#333"/>
+          </el-icon>
+          <el-link class="my-el-link" @click="open_link_new_window('https://www.lingxi.site/')">Blog</el-link>
+        </el-row>
+      </div>
     </el-space>
   </div>
 </template>
 
 <style scoped>
+.my-el-space .ep-row {
+  margin: 10px 0;
+}
+
 .avatar-top {
   margin-top: 10%;
   align-items: center;
 }
 
 .my-el-link {
+  font-family: serif;
   margin-left: 5px;
   color: black;
 }
