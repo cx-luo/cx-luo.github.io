@@ -1,16 +1,16 @@
 <template>
   <el-config-provider namespace="ep">
     <el-container>
-<!--      <el-header>-->
-<!--        <BaseHeader/>-->
-<!--      </el-header>-->
+      <!--      <el-header>-->
+      <!--        <BaseHeader/>-->
+      <!--      </el-header>-->
       <el-container>
-        <el-col :md="3" :sm="0" :xs="0"/>
+        <el-col :md="3" :sm="0" :xs="0" />
         <el-aside>
-          <PersonalInfo/>
+          <PersonalInfo />
         </el-aside>
         <el-main>
-          <personal-detail/>
+          <personal-detail />
         </el-main>
       </el-container>
     </el-container>
@@ -19,7 +19,6 @@
 <script lang="ts" setup>
 import PersonalInfo from "~/views/resume/PersonalInfo.vue";
 import PersonalDetail from "~/views/resume/PersonalDetail.vue";
-import {ToTop} from "@icon-park/vue-next"
 </script>
 <style>
 #app {

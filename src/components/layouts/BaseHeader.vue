@@ -1,17 +1,15 @@
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <el-page-header>
-    <el-col :md="3"/>
+    <el-col :md="3" />
     <el-col :md="10">
       <el-anchor :offset="70" direction="horizontal">
-        <el-anchor-link href="#summary" title="SUMMARY"/>
-        <el-anchor-link href="#education" title="EDUCATION"/>
+        <el-anchor-link href="#summary" title="SUMMARY" />
+        <el-anchor-link href="#education" title="EDUCATION" />
       </el-anchor>
     </el-col>
-    <el-col :md="10">
-    </el-col>
+    <el-col :md="10"> </el-col>
   </el-page-header>
 </template>
 <style scoped>

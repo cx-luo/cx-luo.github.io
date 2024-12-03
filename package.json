@@ -7,7 +7,12 @@
     "build": "vite build",
     "generate": "vite-ssg build",
     "preview": "vite preview",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "vue-tsc --noEmit",
+    "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,tsx}\" --fix",
+    "lint:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
+    "lint:style": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
+    "lint:pretty": "pretty-quick --staged"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",

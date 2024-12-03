@@ -3,8 +3,7 @@ import {ref} from "vue";
 import ProjectExperience from "~/components/layouts/projectExperience.vue";
 import WorkExperience from "~/components/layouts/workExperience.vue";
 
-const containerRef = ref()
-
+const containerRef = ref();
 </script>
 
 <template>
@@ -12,18 +11,24 @@ const containerRef = ref()
     <el-row>
       <el-col :md="3"/>
       <el-col :md="10">
-        <el-anchor :container="containerRef" :offset="70" direction="horizontal">
+        <el-anchor
+            :container="containerRef"
+            :offset="70"
+            direction="horizontal"
+        >
           <el-anchor-link href="#summary" title="SUMMARY"/>
           <el-anchor-link href="#education" title="EDUCATION"/>
           <el-anchor-link href="#experience" title="EXPERIENCE"/>
           <el-anchor-link href="#technical" title="TECHNICAL SKILLS"/>
           <el-anchor-link href="#cert" title="CERTIFICATIONS"/>
           <el-anchor-link href="#other" title="OTHER CONTRIBUTIONS"/>
-          <el-anchor-link href="#projectExperience" title="PROJECT EXPERIENCE"/>
+          <el-anchor-link
+              href="#projectExperience"
+              title="PROJECT EXPERIENCE"
+          />
         </el-anchor>
       </el-col>
-      <el-col :md="10">
-      </el-col>
+      <el-col :md="10"></el-col>
     </el-row>
     <div ref="containerRef" style="margin-top: 20px">
       <el-scrollbar height="86vh">
@@ -44,14 +49,17 @@ const containerRef = ref()
             </el-row>
             <ul class="justified-text">
               <li>Raised issues for OceanBase and ﬁxed two bugs.</li>
-              <li>Spoke as a guest speaker at OceanBase DevCon 2023, sharing tips on using and optimizing distributed
-                databases.
+              <li>
+                Spoke as a guest speaker at OceanBase DevCon 2023, sharing tips
+                on using and optimizing distributed databases.
               </li>
-              <li>Designed and implemented the Pharmaron AI demonstration platform to showcase drug synthesis
-                recommendation routes.
+              <li>
+                Designed and implemented the Pharmaron AI demonstration platform
+                to showcase drug synthesis recommendation routes.
               </li>
-              <li>Designed and developed the ELN system for electronic laboratory data entry, and integrated it with the
-                PubChem API.
+              <li>
+                Designed and developed the ELN system for electronic laboratory
+                data entry, and integrated it with the PubChem API.
               </li>
             </ul>
           </el-col>
@@ -115,7 +123,8 @@ a {
   font-size: 14pt;
 }
 
-.p, p {
+.p,
+p {
   font-family: serif;
   font-weight: normal;
   font-size: 10.5pt;
@@ -181,5 +190,4 @@ a {
   font-weight: normal;
   font-size: 10pt;
 }
-
 </style>
