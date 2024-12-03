@@ -56,21 +56,12 @@ const projectList = [
     <div>
       <el-row>
         <el-col v-for="(item,) in projectList" :md="7" :sm="10" :xs="18">
-
-          <el-card style="height: auto">
+          <el-card style="height: 98%">
             <el-text class="h4">{{ item.name }}</el-text>
             <el-image :src="item.img" fit="scale-down" shape="square"
                       style="width: auto;height: auto" :preview-src-list="item.previewList"/>
-            <!--            <el-image-viewer v-if="showViewer"-->
-            <!--                             :on-close="closeViewer"-->
-            <!--                             :url-list="item.previewList"-->
-            <!--                             :on-switch="previewSwitch"/>-->
           </el-card>
         </el-col>
-
-        <!--        <el-col :md="15" :sm="10" :xs="18">-->
-        <!--          <el-text>{{ item.description }}</el-text>-->
-        <!--        </el-col>-->
       </el-row>
     </div>
   </div>
