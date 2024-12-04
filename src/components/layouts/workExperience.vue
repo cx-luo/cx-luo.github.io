@@ -70,14 +70,13 @@ const positions = ref([
   <el-row class="my-el-row">
     <el-text id="experience" class="s4">EXPERIENCE</el-text>
   </el-row>
+
   <el-row v-for="(position, index) in positions" :key="index">
     <h3>
       <span>{{ position.title }}</span>
-      <span class="h4">{{ position.location }}</span>
-      <span class="s6">
-        {{ position.role }}
-        <span class="s7">{{ position.date }} </span>
-      </span>
+      <span class="h4">{{ position.role }}</span>
+      <span class="s6">{{ position.date }}</span>
+      <span class="s7">{{ position.location }} </span>
     </h3>
     <ul class="justified-text">
       <li v-for="(responsibility, idx) in position.responsibilities" :key="idx">

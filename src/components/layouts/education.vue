@@ -45,12 +45,11 @@ const educations = ref([
   <div v-for="(edu, index) in educations" :key="index">
     <el-row>
       <div>
-        <el-col
-          ><span class="h3">{{ edu.institution }}</span
-          ><span class="s5">{{ edu.location }}</span>
-          <span class="s6"
-            >{{ edu.degree }} <span class="s7">{{ edu.dates }}</span></span
-          >
+        <el-col>
+          <span class="h3">{{ edu.institution }}</span>
+          <span class="s5">{{ edu.degree }}</span>
+          <span class="s6">{{ edu.dates }}</span>
+          <span class="s7">{{ edu.location }}</span>
         </el-col>
       </div>
     </el-row>
