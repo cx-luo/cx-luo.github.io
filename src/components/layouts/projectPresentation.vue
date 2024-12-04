@@ -51,7 +51,7 @@ const projectList = [
     <el-row>
       <el-text class="s4" id="projectExperience">PROJECT EXPERIENCE</el-text>
     </el-row>
-    <div>
+    <div style="margin-top: 15px">
       <el-row>
         <el-col v-for="item in projectList" :md="7" :sm="10" :xs="18">
           <el-card style="height: 98%">

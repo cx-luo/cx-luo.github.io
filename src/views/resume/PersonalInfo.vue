@@ -32,10 +32,7 @@ const copyLink = async (url: string) => {
     ElMessage.error("Failed to copy link: " + error.message);
   }
 };
-
-const open_link_new_window = (url: string) => {
-  window.open(url);
-};
+import { open_link_new_window } from "~/composables/tools";
 </script>
 
 <template>
@@ -44,9 +41,9 @@ const open_link_new_window = (url: string) => {
       <el-avatar :src="src" :size="200" />
       <div>
         <h2>Chengxiang Luo</h2>
-        <el-text style="font-family: serif; font-weight: bold; color: black"
-          >罗呈祥</el-text
-        >
+        <el-text style="font-family: serif; font-weight: bold; color: black">
+          罗呈祥
+        </el-text>
       </div>
       <div class="my-el-space">
         <el-row>
@@ -56,8 +53,9 @@ const open_link_new_window = (url: string) => {
           <el-link
             class="my-el-link"
             @click="open_link_new_window('https://www.pharmaron.com/')"
-            >Pharmaron</el-link
           >
+            Pharmaron
+          </el-link>
         </el-row>
         <el-row>
           <el-icon>
@@ -72,8 +70,8 @@ const open_link_new_window = (url: string) => {
           <el-link
             class="my-el-link"
             @click="copyLink('andrew.luo1992[at]gmail[dot]com')"
-            >Email</el-link
-          >
+            >Email
+          </el-link>
         </el-row>
         <el-row>
           <Icon icon="jam:linkedin-square" />
@@ -95,8 +93,8 @@ const open_link_new_window = (url: string) => {
           <el-link
             class="my-el-link"
             @click="open_link_new_window('https://github.com/cx-luo')"
-            >Github</el-link
-          >
+            >Github
+          </el-link>
         </el-row>
         <el-row>
           <el-icon>
@@ -105,8 +103,8 @@ const open_link_new_window = (url: string) => {
           <el-link
             class="my-el-link"
             @click="open_link_new_window('https://www.lingxi.site/')"
-            >Blog</el-link
-          >
+            >Blog
+          </el-link>
         </el-row>
       </div>
     </el-space>
