@@ -56,7 +56,7 @@ const educations = ref([
     <p>
       <el-row>
         <el-col :md="1" class="h4-courses">Courses:</el-col>
-        <el-col :md="19" class="s7-courses">
+        <el-col :md="21" class="s7-courses">
           <span>{{ edu.courses.join(", ") }}</span>
         </el-col>
       </el-row>
