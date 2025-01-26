@@ -1,12 +1,5 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import {
-  Mail,
-  CityOne,
-  Local,
-  Github,
-  DocumentFolder,
-} from "@icon-park/vue-next";
 import { ElMessage } from "element-plus";
 import { Icon } from "@iconify/vue";
 import { getUser } from "~/composables/apis";
@@ -34,12 +27,55 @@ const copyLink = async (url: string) => {
   }
 };
 import { open_link_new_window } from "~/composables/tools";
+
+const items = [
+  {
+    icon: "icon-park-outline:city-one",
+    link: {
+      text: "Pharmaron",
+      action: () => open_link_new_window("https://www.pharmaron.com/"),
+    },
+  },
+  {
+    icon: "icon-park-outline:local",
+    text: "Beijing, China",
+  },
+  {
+    icon: "icon-park-outline:mail",
+    link: {
+      text: "Email",
+      action: () => copyLink("andrew.luo1992[at]gmail[dot]com"),
+    },
+  },
+  {
+    icon: "jam:linkedin-square",
+    link: {
+      text: "LinkedIn",
+      action: () =>
+        open_link_new_window("https://www.linkedin.com/in/chengxiang-luo/"),
+    },
+  },
+  {
+    icon: "icon-park-outline:github",
+    link: {
+      text: "Github",
+      action: () => open_link_new_window("https://github.com/cx-luo"),
+    },
+  },
+  {
+    icon: "fluent-mdl2:company-directory",
+    link: {
+      text: "Blog",
+      action: () => open_link_new_window("https://www.lingxi.site/"),
+    },
+  },
+];
 </script>
 
 <template>
   <div class="avatar-top">
     <el-space direction="vertical" :size="size">
-      <el-avatar :src="src" :size="200" />
+      <el-avatar :src="src" :size="120" />
       <div>
         <h2>Chengxiang Luo</h2>
         <el-text style="font-family: serif; font-weight: bold; color: black">
@@ -47,66 +83,19 @@ import { open_link_new_window } from "~/composables/tools";
         </el-text>
       </div>
       <div class="my-el-space">
-        <el-row>
-          <el-icon>
-            <city-one />
-          </el-icon>
-          <el-link
-            class="my-el-link"
-            @click="open_link_new_window('https://www.pharmaron.com/')"
-          >
-            Pharmaron
-          </el-link>
-        </el-row>
-        <el-row>
-          <el-icon>
-            <local fill="#333" />
-          </el-icon>
-          <el-text class="my-el-link">Beijing, China</el-text>
-        </el-row>
-        <el-row>
-          <el-icon>
-            <Mail theme="outline" size="20" fill="#333" />
-          </el-icon>
-          <el-link
-            class="my-el-link"
-            @click="copyLink('andrew.luo1992[at]gmail[dot]com')"
-            >Email
-          </el-link>
-        </el-row>
-        <el-row>
-          <Icon icon="jam:linkedin-square" />
-          <el-link
-            class="my-el-link"
-            @click="
-              open_link_new_window(
-                'https://www.linkedin.com/in/chengxiang-luo/',
-              )
-            "
-          >
-            LinkedIn
-          </el-link>
-        </el-row>
-        <el-row>
-          <el-icon>
-            <github theme="outline" size="20" fill="#333" />
-          </el-icon>
-          <el-link
-            class="my-el-link"
-            @click="open_link_new_window('https://github.com/cx-luo')"
-            >Github
-          </el-link>
-        </el-row>
-        <el-row>
-          <el-icon>
-            <DocumentFolder theme="outline" size="20" fill="#333" />
-          </el-icon>
-          <el-link
-            class="my-el-link"
-            @click="open_link_new_window('https://www.lingxi.site/')"
-            >Blog
-          </el-link>
-        </el-row>
+        <el-col>
+          <el-row v-for="(item, index) in items" :key="index">
+            <Icon :icon="item.icon" />
+            <el-link
+              v-if="item.link"
+              class="my-el-link"
+              @click="item.link.action"
+            >
+              {{ item.link.text }}
+            </el-link>
+            <el-text v-else class="my-el-link">{{ item.text }}</el-text>
+          </el-row>
+        </el-col>
       </div>
     </el-space>
   </div>
@@ -118,7 +107,7 @@ import { open_link_new_window } from "~/composables/tools";
 }
 
 .avatar-top {
-  margin-top: 10%;
+  margin-top: 16%;
   align-items: center;
 }
 

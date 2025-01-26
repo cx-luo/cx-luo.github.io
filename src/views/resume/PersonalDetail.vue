@@ -7,8 +7,7 @@ const containerRef = ref();
 <template>
   <div>
     <el-row>
-      <el-col :md="3" />
-      <el-col :md="15">
+      <el-col>
         <el-anchor
           :container="containerRef"
           :offset="70"
@@ -26,26 +25,25 @@ const containerRef = ref();
           />
         </el-anchor>
       </el-col>
-      <el-col :md="10"></el-col>
     </el-row>
     <div ref="containerRef" style="margin-top: 20px">
       <el-scrollbar height="86vh">
-        <el-row>
-          <el-col :md="20" :sm="20" :xs="18">
-            <my-summary />
+        <!--        <el-row>-->
+        <el-col :md="20" :sm="20" :xs="18">
+          <my-summary />
 
-            <education />
+          <education />
 
-            <work-experience />
+          <work-experience />
 
-            <it-skills />
+          <it-skills />
 
-            <certifications />
+          <certifications />
 
-            <contributions />
-          </el-col>
-          <el-col :md="4" :sm="8" :xs="18" />
-        </el-row>
+          <contributions />
+        </el-col>
+        <!--          <el-col :md="4" :sm="8" :xs="18" />-->
+        <!--        </el-row>-->
         <project-presentation />
       </el-scrollbar>
     </div>

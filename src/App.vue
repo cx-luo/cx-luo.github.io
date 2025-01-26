@@ -1,17 +1,18 @@
 <template>
   <el-config-provider namespace="ep">
     <el-container>
-      <!--      <el-header>-->
-      <!--        <BaseHeader/>-->
-      <!--      </el-header>-->
       <el-container>
-        <el-col :md="3" :sm="0" :xs="0" />
-        <el-aside>
-          <PersonalInfo />
-        </el-aside>
-        <el-main>
-          <personal-detail />
-        </el-main>
+        <el-col :xl="3" :lg="3" :md="3" :sm="0" :xs="0" />
+        <el-col :xl="4" :lg="4" :md="4" :sm="7" :xs="24">
+          <el-aside>
+            <PersonalInfo />
+          </el-aside>
+        </el-col>
+        <el-col :xl="14" :lg="14" :md="14" :sm="17" :xs="24">
+          <el-main>
+            <personal-detail />
+          </el-main>
+        </el-col>
       </el-container>
     </el-container>
   </el-config-provider>

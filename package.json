@@ -19,6 +19,7 @@
     "@icon-park/vue-next": "^1.4.2",
     "element-plus": "^2.6.2",
     "eslint-define-config": "^2.1.0",
+    "mobile-detect": "^1.4.5",
     "vue": "^3.4.21"
   },
   "devDependencies": {

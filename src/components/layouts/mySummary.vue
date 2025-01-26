@@ -3,7 +3,7 @@
 <template>
   <el-row id="summary" class="my-el-row">
     <el-text class="justified-text">
-      Experienced technical professional with 8+ years expertise in network
+      Experienced technical professional with 9+ years expertise in network
       engineering, database administration, and full-stack development. Proven
       ability to design secure network architectures, optimize database
       performance, and deliver end-to-end software solutions. Successfully
