@@ -1,26 +1,26 @@
 <script setup lang="ts">
 const elabxList = [
-  "https://img.lingxi.site/202411271846983.jpg",
-  "https://img.lingxi.site/202411271846005.jpg",
-  "https://img.lingxi.site/202411280956282.png",
-  "https://img.lingxi.site/202411280949235.png",
+  "static/img/202411271846983.jpg",
+  "static/img/202411271846005.jpg",
+  "static/img/202411280956282.png",
+  "static/img/202411280949235.png",
 ];
 const projectList = [
   {
     name: "reaction condition predict",
-    img: "https://img.lingxi.site/202411271846929.jpg",
-    previewList: ["https://img.lingxi.site/202411271846929.jpg"],
+    img: "static/img/202411271846929.jpg",
+    previewList: ["static/img/202411271846929.jpg"],
     description: "",
   },
   {
     name: "retrosynthesis",
-    img: "https://img.lingxi.site/202411271846030.jpg",
-    previewList: ["https://img.lingxi.site/202411271846030.jpg"],
+    img: "static/img/202411271846030.jpg",
+    previewList: ["static/img/202411271846030.jpg"],
     description: "",
   },
   {
     name: "eLabX - AI driven ELN",
-    img: "https://img.lingxi.site/202411271846005.jpg",
+    img: "static/img/202411271846005.jpg",
     previewList: elabxList,
     description: "",
   },

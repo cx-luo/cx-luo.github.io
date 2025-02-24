@@ -4,7 +4,7 @@ import { ElMessage } from "element-plus";
 import { Icon } from "@iconify/vue";
 import { getUser } from "~/composables/apis";
 
-const src = "https://img.lingxi.site/202411280923154.png";
+const src = "static/img/202411280923154.png";
 const size = ref(30);
 getUser();
 let clipboard = navigator.clipboard || {
