@@ -1,87 +1,70 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
+
+const skillSections = [
+  {
+    title: "Programming Languages",
+    icons: [
+      { icon: "vscode-icons:file-type-python" },
+      { icon: "vscode-icons:file-type-go-gopher" },
+      { icon: "vscode-icons:file-type-vue" },
+      { icon: "tabler:file-type-sql", style: "color: #15bfd5" },
+      { icon: "vscode-icons:file-type-js-official" },
+      { icon: "catppuccin:powershell" },
+      { icon: "vscode-icons:file-type-c" },
+      { icon: "vscode-icons:file-type-cpp" },
+      { icon: "devicon:matlab" },
+    ],
+  },
+  {
+    title: "Libraries & Tools",
+    icons: [
+      { icon: "devicon:pandas-wordmark" },
+      { icon: "vscode-icons:file-type-numpy" },
+      { icon: "logos:tensorflow" },
+      { icon: "devicon:pytorch" },
+      { icon: "devicon:linux" },
+      { icon: "devicon:redhat" },
+      { icon: "ri:ubuntu-fill", style: "color: #d54515" },
+      { icon: "devicon:git" },
+      { icon: "devicon:qt" },
+      { icon: "devicon:docker-wordmark" },
+    ],
+  },
+  {
+    title: "Databases",
+    icons: [
+      { icon: "devicon:oracle" },
+      { icon: "devicon:mysql" },
+      { icon: "devicon:postgresql" },
+      { icon: "skill-icons:kafka" },
+      { icon: "devicon:redis" },
+    ],
+  },
+];
 </script>
 
 <template>
   <div>
     <el-row>
-      <el-text class="s4" id="technical">TECHNICAL SKILLS</el-text>
+      <el-text class="experience-title" id="technical">TECHNICAL SKILLS</el-text>
     </el-row>
-    <el-row>
-      <p class="h3">Programming Languages:</p>
-      <span>
-        <Icon
-          icon="vscode-icons:file-type-python"
-          class="skill-icon"
-          width="40px"
-        />
-        <Icon
-          icon="vscode-icons:file-type-go-gopher"
-          class="skill-icon"
-          width="40px"
-        />
-        <Icon
-          icon="vscode-icons:file-type-vue"
-          class="skill-icon"
-          width="40px"
-        />
-        <Icon
-          icon="tabler:file-type-sql"
-          style="color: #15bfd5"
-          class="skill-icon"
-          width="40px"
-        />
-        <Icon
-          icon="vscode-icons:file-type-js-official"
-          class="skill-icon"
-          width="40px"
-        />
-        <Icon icon="catppuccin:powershell" class="skill-icon" width="40px" />
-        <Icon icon="vscode-icons:file-type-c" class="skill-icon" width="40px" />
-        <Icon
-          icon="vscode-icons:file-type-cpp"
-          class="skill-icon"
-          width="40px"
-        />
-        <Icon icon="devicon:matlab" class="skill-icon" width="40px" />
-      </span>
-    </el-row>
-    <el-divider class="el-divider" />
-    <el-row>
-      <p class="h3">Libraries & Tools:</p>
-      <span>
-        <Icon icon="devicon:pandas-wordmark" class="skill-icon" width="40px" />
-        <Icon
-          icon="vscode-icons:file-type-numpy"
-          class="skill-icon"
-          width="40px"
-        />
-        <Icon icon="logos:tensorflow" class="skill-icon" width="40px" />
-        <Icon icon="devicon:pytorch" class="skill-icon" width="40px" />
-        <Icon icon="devicon:linux" class="skill-icon" width="40px" />
-        <Icon icon="devicon:redhat" class="skill-icon" width="40px" />
-        <Icon
-          icon="ri:ubuntu-fill"
-          style="color: #d54515"
-          class="skill-icon"
-          width="40px"
-        />
-        <Icon icon="devicon:git" class="skill-icon" width="40px" />
-        <Icon icon="devicon:qt" class="skill-icon" width="40px" />
-        <Icon icon="devicon:docker-wordmark" class="skill-icon" width="40px" />
-      </span>
-    </el-row>
-    <el-divider class="el-divider" />
-    <el-row>
-      <p class="h3">Databases:</p>
-      <span>
-        <Icon icon="devicon:oracle" class="skill-icon" width="40px" />
-        <Icon icon="devicon:mysql" class="skill-icon" width="40px" />
-        <Icon icon="devicon:postgresql" class="skill-icon" width="40px" />
-        <Icon icon="skill-icons:kafka" class="skill-icon" width="40px" />
-        <Icon icon="devicon:redis" class="skill-icon" width="40px" />
-      </span>
-    </el-row>
+    <template v-for="(section, idx) in skillSections" :key="section.title">
+      <el-row>
+        <p class="h3">{{ section.title }}:</p>
+        <span>
+          <Icon
+            v-for="(item, i) in section.icons"
+            :key="item.icon"
+            :icon="item.icon"
+            class="skill-icon"
+            width="40px"
+            v-bind="item.style ? { style: item.style } : {}"
+          />
+        </span>
+      </el-row>
+      <el-divider v-if="idx < skillSections.length - 1" class="el-divider" />
+    </template>
   </div>
 </template>
 
@@ -93,5 +76,14 @@ import { Icon } from "@iconify/vue";
 
 .el-divider {
   margin: 10px 0;
+}
+
+.experience-title {
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-size: 22pt;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #222;
+  margin-bottom: 10px;
 }
 </style>

@@ -25,9 +25,11 @@ import PersonalDetail from "~/views/resume/PersonalDetail.vue";
 #app {
   text-align: center;
   color: var(--ep-text-color-primary);
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
 
 .main-container {
   height: calc(100vh - var(--ep-menu-item-height) - 3px);
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
 </style>
