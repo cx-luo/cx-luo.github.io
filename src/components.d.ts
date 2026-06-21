@@ -12,8 +12,6 @@ declare module 'vue' {
     Certifications: typeof import('./components/layouts/certifications.vue')['default']
     Contributions: typeof import('./components/layouts/contributions.vue')['default']
     Education: typeof import('./components/layouts/education.vue')['default']
-    ElAnchor: typeof import('element-plus/es')['ElAnchor']
-    ElAnchorLink: typeof import('element-plus/es')['ElAnchorLink']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']

@@ -1,29 +1,45 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
+const scrollbarRef = ref<{ setScrollTop: (value: number) => void }>();
 const containerRef = ref<HTMLElement>();
+
+const navItems = [
+  { id: "summary", label: "Summary" },
+  { id: "education", label: "Education" },
+  { id: "experience", label: "Experience" },
+  { id: "opensource", label: "Open Source" },
+  { id: "technical", label: "Skills" },
+  { id: "cert", label: "Certs" },
+  { id: "other", label: "Contributions" },
+  { id: "projectPresentation", label: "Projects" },
+];
+
+const scrollToSection = (id: string) => {
+  const container = containerRef.value;
+  const target = container?.querySelector<HTMLElement>(`#${id}`);
+
+  if (!container || !target) return;
+
+  scrollbarRef.value?.setScrollTop(Math.max(target.offsetTop - 12, 0));
+};
 </script>
 
 <template>
   <div class="detail-panel">
     <nav class="detail-nav">
-      <el-anchor
-        :container="containerRef"
-        :offset="80"
-        direction="horizontal"
+      <button
+        v-for="item in navItems"
+        :key="item.id"
+        class="detail-nav-button"
+        type="button"
+        @click="scrollToSection(item.id)"
       >
-        <el-anchor-link href="#summary" title="Summary" />
-        <el-anchor-link href="#education" title="Education" />
-        <el-anchor-link href="#experience" title="Experience" />
-        <el-anchor-link href="#opensource" title="Open Source" />
-        <el-anchor-link href="#technical" title="Skills" />
-        <el-anchor-link href="#cert" title="Certs" />
-        <el-anchor-link href="#other" title="Contributions" />
-        <el-anchor-link href="#projectPresentation" title="Projects" />
-      </el-anchor>
+        {{ item.label }}
+      </button>
     </nav>
 
-    <el-scrollbar class="detail-scroll">
+    <el-scrollbar ref="scrollbarRef" class="detail-scroll">
       <div ref="containerRef" class="detail-content">
         <my-summary />
         <education />
@@ -39,11 +55,22 @@ const containerRef = ref<HTMLElement>();
 </template>
 
 <style scoped>
-.detail-scroll {
+.detail-panel {
+  display: flex;
+  flex-direction: column;
   height: calc(100vh - 5rem);
 }
 
+.detail-scroll {
+  flex: 1;
+  min-height: 0;
+}
+
 @media (max-width: 767px) {
+  .detail-panel {
+    height: auto;
+  }
+
   .detail-scroll {
     height: auto;
     max-height: none;
