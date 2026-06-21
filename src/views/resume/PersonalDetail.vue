@@ -1,175 +1,52 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import MySummary from "~/components/layouts/mySummary.vue";
-const containerRef = ref();
+
+const containerRef = ref<HTMLElement>();
 </script>
 
 <template>
-  <div>
-    <el-row>
-      <el-col>
-        <el-anchor
-          :container="containerRef"
-          :offset="70"
-          direction="horizontal"
-        >
-          <el-anchor-link href="#summary" title="SUMMARY" />
-          <el-anchor-link href="#education" title="EDUCATION" />
-          <el-anchor-link href="#experience" title="EXPERIENCE" />
-          <el-anchor-link href="#technical" title="TECHNICAL SKILLS" />
-          <el-anchor-link href="#cert" title="CERTIFICATIONS" />
-          <el-anchor-link href="#other" title="OTHER CONTRIBUTIONS" />
-          <el-anchor-link
-            href="#projectPresentation"
-            title="PROJECT PRESENTATION"
-          />
-        </el-anchor>
-      </el-col>
-    </el-row>
-    <div ref="containerRef" style="margin-top: 20px">
-      <el-scrollbar height="86vh">
-        <!--        <el-row>-->
-        <el-col :md="20" :sm="20" :xs="18">
-          <my-summary />
+  <div class="detail-panel">
+    <nav class="detail-nav">
+      <el-anchor
+        :container="containerRef"
+        :offset="80"
+        direction="horizontal"
+      >
+        <el-anchor-link href="#summary" title="Summary" />
+        <el-anchor-link href="#education" title="Education" />
+        <el-anchor-link href="#experience" title="Experience" />
+        <el-anchor-link href="#opensource" title="Open Source" />
+        <el-anchor-link href="#technical" title="Skills" />
+        <el-anchor-link href="#cert" title="Certs" />
+        <el-anchor-link href="#other" title="Contributions" />
+        <el-anchor-link href="#projectPresentation" title="Projects" />
+      </el-anchor>
+    </nav>
 
-          <education />
-
-          <work-experience />
-
-          <it-skills />
-
-          <certifications />
-
-          <contributions />
-        </el-col>
-        <!--          <el-col :md="4" :sm="8" :xs="18" />-->
-        <!--        </el-row>-->
+    <el-scrollbar class="detail-scroll">
+      <div ref="containerRef" class="detail-content">
+        <my-summary />
+        <education />
+        <work-experience />
+        <open-source-projects />
+        <it-skills />
+        <certifications />
+        <contributions />
         <project-presentation />
-      </el-scrollbar>
-    </div>
+      </div>
+    </el-scrollbar>
   </div>
 </template>
 
-<style>
-h1 {
-  font-family: serif;
-  font-weight: bold;
-  font-size: 24.5pt;
+<style scoped>
+.detail-scroll {
+  height: calc(100vh - 5rem);
 }
 
-.justified-text {
-  font-family: serif;
-  text-align: justify;
-  text-align-last: left; /* 确保最后一行也进行两端对齐 */
-  font-weight: normal;
-  color: black;
-  font-size: 13pt;
-}
-
-.my-el-row {
-  margin-top: 10px;
-}
-
-.s1 {
-  font-family: serif;
-  font-weight: normal;
-  font-size: 9pt;
-}
-
-.s2 {
-  font-family: serif;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 9pt;
-}
-
-a {
-  font-family: serif;
-  font-weight: normal;
-  font-size: 9pt;
-}
-
-.s3 {
-  font-family: serif;
-  font-weight: normal;
-  text-decoration: underline;
-  font-size: 9pt;
-}
-
-.s4 {
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 14pt;
-}
-
-.p,
-p {
-  font-family: serif;
-  font-weight: normal;
-  font-size: 10.5pt;
-}
-
-.h3,
-h3 {
-  font-family: serif;
-  font-weight: bold;
-  font-size: 11pt;
-  margin-left: 20px;
-}
-
-.s5 {
-  margin-left: 30px;
-  font-family: serif;
-  font-weight: bold;
-  font-size: 10pt;
-}
-
-.s6 {
-  margin-left: 20px;
-  font-family: serif;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 10pt;
-}
-
-.h4,
-h4 {
-  margin-left: 30px;
-  font-family: serif;
-  font-weight: bold;
-  font-size: 10.5pt;
-}
-
-.s7 {
-  font-family: serif;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 10.5pt;
-  margin-left: 20px;
-}
-
-.s8 {
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: 10.5pt;
-}
-
-.h2,
-h2 {
-  font-family: serif;
-  font-weight: bold;
-  font-size: 14pt;
-}
-
-.s9 {
-  font-family: serif;
-  font-weight: normal;
-  font-size: 11pt;
-}
-
-.s10 {
-  font-family: serif;
-  font-weight: normal;
-  font-size: 10pt;
+@media (max-width: 767px) {
+  .detail-scroll {
+    height: auto;
+    max-height: none;
+  }
 }
 </style>

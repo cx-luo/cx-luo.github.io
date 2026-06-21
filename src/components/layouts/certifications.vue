@@ -1,17 +1,22 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const certifications = [
+  "MySQL Oracle Certified Professional",
+  "Huawei Certified Network Professional",
+  "OceanBase Certified Assistant",
+];
+</script>
 
 <template>
-  <div>
-    <el-row>
-      <el-text class="s4" id="cert">CERTIFICATIONS</el-text>
-    </el-row>
-
-    <el-row>
-      <p class="s5">MySQL Oracle Certiﬁed Professional</p>
-      <p class="s5">Huawei Certiﬁed Network Professional</p>
-      <p class="s5">OceanBase Certiﬁed Assistant</p>
-    </el-row>
-  </div>
+  <section id="cert" class="resume-section">
+    <h2 class="section-title">CERTIFICATIONS</h2>
+    <div class="cert-grid">
+      <span
+        v-for="cert in certifications"
+        :key="cert"
+        class="cert-badge"
+      >
+        {{ cert }}
+      </span>
+    </div>
+  </section>
 </template>
-
-<style scoped></style>

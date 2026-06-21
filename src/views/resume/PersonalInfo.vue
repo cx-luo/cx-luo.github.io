@@ -1,18 +1,19 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import { ElMessage } from "element-plus";
 import { Icon } from "@iconify/vue";
+import { open_link_new_window } from "~/composables/tools";
 
 const src = "static/img/202411280923154.png";
-const size = ref(30);
-let clipboard = navigator.clipboard || {
-  writeText: (text) => {
-    let copyInput = document.createElement("input");
+
+const clipboard = navigator.clipboard || {
+  writeText: (text: string) => {
+    const copyInput = document.createElement("input");
     copyInput.value = text;
     document.body.appendChild(copyInput);
     copyInput.select();
     document.execCommand("copy");
     document.body.removeChild(copyInput);
+    return Promise.resolve();
   },
 };
 
@@ -20,18 +21,18 @@ const copyLink = async (url: string) => {
   try {
     await clipboard.writeText(url);
     ElMessage.success("Email address copied to clipboard!");
-  } catch (error) {
-    ElMessage.error("Failed to copy link: " + error.message);
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
+    ElMessage.error("Failed to copy link: " + message);
   }
 };
-import { open_link_new_window } from "~/composables/tools";
 
 const items = [
   {
     icon: "icon-park-outline:city-one",
     link: {
-      text: "Pharmaron",
-      action: () => open_link_new_window("https://www.pharmaron.com/"),
+      text: "AISI",
+      action: () => open_link_new_window("https://www.aisi.ac.cn/"),
     },
   },
   {
@@ -42,7 +43,7 @@ const items = [
     icon: "icon-park-outline:mail",
     link: {
       text: "Email",
-      action: () => copyLink("andrew.luo1992[at]gmail[dot]com"),
+      action: () => copyLink("andrew.luo1992@gmail.com"),
     },
   },
   {
@@ -67,51 +68,43 @@ const items = [
       action: () => open_link_new_window("https://www.lingxi.site/"),
     },
   },
+  {
+    icon: "simple-icons:csdn",
+    link: {
+      text: "CSDN",
+      action: () =>
+        open_link_new_window("https://blog.csdn.net/weixin_46668148"),
+    },
+  },
 ];
 </script>
 
 <template>
-  <div class="avatar-top">
-    <el-space direction="vertical" :size="size">
+  <aside class="profile-card">
+    <div class="profile-avatar-wrap">
       <el-avatar :src="src" :size="120" />
-      <div>
-        <h2>Chengxiang Luo</h2>
-        <el-text style="font-family: serif; font-weight: bold; color: black">
-          罗呈祥
-        </el-text>
-      </div>
-      <div class="my-el-space">
-        <el-col>
-          <el-row v-for="(item, index) in items" :key="index">
-            <Icon :icon="item.icon" />
-            <el-link
-              v-if="item.link"
-              class="my-el-link"
-              @click="item.link.action"
-            >
-              {{ item.link.text }}
-            </el-link>
-            <el-text v-else class="my-el-link">{{ item.text }}</el-text>
-          </el-row>
-        </el-col>
-      </div>
-    </el-space>
-  </div>
+    </div>
+    <h1 class="profile-name">Chengxiang Luo</h1>
+    <p class="profile-name-cn">罗呈祥</p>
+    <span class="profile-tagline">AI4Science · Cheminformatics</span>
+    <ul class="contact-list">
+      <li
+        v-for="(item, index) in items"
+        :key="index"
+        class="contact-item"
+      >
+        <span class="contact-icon">
+          <Icon :icon="item.icon" />
+        </span>
+        <span
+          v-if="item.link"
+          class="contact-link"
+          @click="item.link.action"
+        >
+          {{ item.link.text }}
+        </span>
+        <span v-else class="contact-text">{{ item.text }}</span>
+      </li>
+    </ul>
+  </aside>
 </template>
-
-<style scoped>
-.my-el-space .ep-row {
-  margin: 10px 0;
-}
-
-.avatar-top {
-  margin-top: 16%;
-  align-items: center;
-}
-
-.my-el-link {
-  font-family: serif;
-  margin-left: 5px;
-  color: black;
-}
-</style>

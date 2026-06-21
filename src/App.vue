@@ -1,35 +1,28 @@
 <template>
   <el-config-provider namespace="ep">
-    <el-container>
-      <el-container>
-        <el-col :xl="3" :lg="3" :md="3" :sm="0" :xs="0" />
-        <el-col :xl="4" :lg="4" :md="4" :sm="7" :xs="24">
-          <el-aside>
+    <div class="resume-page">
+      <div class="resume-layout">
+        <el-row :gutter="24">
+          <el-col :xl="7" :lg="7" :md="8" :sm="24" :xs="24">
             <PersonalInfo />
-          </el-aside>
-        </el-col>
-        <el-col :xl="14" :lg="14" :md="14" :sm="17" :xs="24">
-          <el-main>
-            <personal-detail />
-          </el-main>
-        </el-col>
-      </el-container>
-    </el-container>
+          </el-col>
+          <el-col :xl="17" :lg="17" :md="16" :sm="24" :xs="24">
+            <PersonalDetail />
+          </el-col>
+        </el-row>
+      </div>
+    </div>
   </el-config-provider>
 </template>
+
 <script lang="ts" setup>
 import PersonalInfo from "~/views/resume/PersonalInfo.vue";
 import PersonalDetail from "~/views/resume/PersonalDetail.vue";
 </script>
+
 <style>
 #app {
   text-align: center;
   color: var(--ep-text-color-primary);
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-}
-
-.main-container {
-  height: calc(100vh - var(--ep-menu-item-height) - 3px);
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
 </style>

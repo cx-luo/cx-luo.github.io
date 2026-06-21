@@ -1,9 +1,6 @@
 // import dark theme
 @use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
-
-// :root {
-//   --ep-color-primary: red;
-// }
+@use "./resume.scss";
 
 body {
   font-family: Inter, system-ui, Avenir, "Helvetica Neue", Helvetica,
@@ -13,9 +10,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   font-size: 16px;
-  line-height: 1.25;
-  color: #333;
-  background: #fff;
+  line-height: 1.5;
+  color: var(--resume-text, #1e293b);
+  background: var(--resume-bg, #f1f5f9);
 }
 
 a {

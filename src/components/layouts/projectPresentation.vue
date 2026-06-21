@@ -5,77 +5,75 @@ const elabxList = [
   "static/img/202411280956282.png",
   "static/img/202411280949235.png",
 ];
+
 const projectList = [
   {
-    name: "reaction condition predict",
+    name: "Reaction Condition Prediction",
+    category: "AIDD Modeling",
     img: "static/img/202411271846929.jpg",
     previewList: ["static/img/202411271846929.jpg"],
-    description: "",
+    description:
+      "Prototype for reaction-condition recommendation, combining chemistry features with deep learning models to support synthesis planning.",
+    tags: ["Reaction", "Deep Learning", "AIDD"],
   },
   {
-    name: "retrosynthesis",
+    name: "Compound Retrosynthesis",
+    category: "Drug Discovery",
     img: "static/img/202411271846030.jpg",
     previewList: ["static/img/202411271846030.jpg"],
-    description: "",
+    description:
+      "Retrosynthesis exploration interface for compound route analysis and AI-assisted synthesis decision support.",
+    tags: ["Retrosynthesis", "Route Search", "Chemistry"],
   },
   {
-    name: "eLabX - AI driven ELN",
+    name: "eLabX — AI-driven ELN",
+    category: "AI Platform",
     img: "static/img/202411271846005.jpg",
     previewList: elabxList,
-    description: "",
+    description:
+      "AI-driven electronic laboratory notebook for structured experimental records, chemical metadata, and research workflow automation.",
+    tags: ["ELN", "PubChem", "LLM"],
   },
 ];
-// const showViewer = ref(false)
-// const showPreview = (val) => {
-//   console.log(val)
-//   showViewer.value = true;
-//   let index = this.index - 1;
-//   this.previewList = this.srcList.slice(index).concat(this.srcList.slice(0, index));
-// }
-// const closeViewer = () => {
-//   showViewer.value = false
-// }
-//
-// const previewSwitch = () => {
-//   this.imageList.map((item, index) => {
-//     if (item.url == this.previewList[val]) {
-//       this.imageUrl = this.imageList[index].url;
-//       this.index = index + 1;
-//     }
-//   });
-// }
 </script>
 
 <template>
-  <div>
-    <el-row>
-      <el-text class="s4" id="projectExperience">PROJECT EXPERIENCE</el-text>
-    </el-row>
-    <div style="margin-top: 15px">
-      <el-row>
-        <el-col v-for="item in projectList" :md="7" :sm="10" :xs="18">
-          <el-card style="height: 98%">
-            <el-text class="h4">{{ item.name }}</el-text>
-            <el-image
-              :src="item.img"
-              fit="scale-down"
-              shape="square"
-              style="width: auto; height: auto"
-              :preview-src-list="item.previewList"
-            />
-          </el-card>
-        </el-col>
-      </el-row>
+  <section id="projectPresentation" class="resume-section">
+    <h2 class="section-title">PROJECTS</h2>
+    <div class="project-grid">
+      <article
+        v-for="item in projectList"
+        :key="item.name"
+        class="project-card"
+      >
+        <div class="project-media">
+          <el-image
+            class="project-cover"
+            :src="item.img"
+            fit="cover"
+            :preview-src-list="item.previewList"
+            preview-teleported
+          >
+            <template #placeholder>
+              <div class="project-placeholder">Loading preview...</div>
+            </template>
+          </el-image>
+          <div class="project-overlay">
+            <span>Click to preview</span>
+          </div>
+          <span class="project-count">
+            {{ item.previewList.length }} image{{ item.previewList.length > 1 ? "s" : "" }}
+          </span>
+        </div>
+        <div class="project-body">
+          <span class="project-category">{{ item.category }}</span>
+          <h3 class="project-card-title">{{ item.name }}</h3>
+          <p class="project-desc">{{ item.description }}</p>
+          <div class="project-tags">
+            <span v-for="tag in item.tags" :key="tag">{{ tag }}</span>
+          </div>
+        </div>
+      </article>
     </div>
-  </div>
+  </section>
 </template>
-
-<style scoped>
-.h4 {
-  margin-bottom: 10px;
-  font-family: serif;
-  font-weight: bold;
-  font-size: 13pt;
-  color: #0d84e5;
-}
-</style>

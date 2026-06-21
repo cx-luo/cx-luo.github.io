@@ -1,26 +1,27 @@
 <script setup lang="ts"></script>
 
 <template>
-  <el-row id="summary" class="my-el-row">
-    <el-text class="summary-text">
-      Experienced technical professional with 9+ years of expertise in network engineering, database administration, and full-stack development. Proven ability to design secure network architectures, optimize database performance, and deliver end-to-end software solutions. Successfully applied machine learning and AI algorithms to solve complex distributed database performance optimization problems in SaaS multi-tenant models, resulting in a 9.8% increase in efficiency as demonstrated by thesis analysis.
-    </el-text>
-  </el-row>
+  <section id="summary" class="resume-section">
+    <h2 class="section-title">SUMMARY</h2>
+    <div class="summary-card">
+      <p class="summary-text">
+        <span class="hl">AI4Science researcher</span> with
+        <span class="hl">10+ years</span> of experience spanning
+        <span class="hl">cheminformatics engineering</span>, AIDD, database
+        administration, and full-stack development. Expertise in molecular
+        representation pipelines, cheminformatics toolchains (RDKit, Indigo,
+        Ketcher), and AI platform development. Combines a mathematics background
+        with deep learning (PyTorch, TensorFlow) and production engineering to
+        build molecular data workflows for drug discovery and scientific
+        intelligence.
+      </p>
+    </div>
+  </section>
 </template>
 
 <style scoped>
-.summary-text {
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #222;
-  text-align: justify;
-  text-align-last: left;
-  line-height: 1.7;
-  letter-spacing: 0.1px;
-  background: none;
-  margin-bottom: 0;
-  padding: 0;
-  display: block;
+.hl {
+  font-weight: 600;
+  color: var(--resume-primary);
 }
 </style>

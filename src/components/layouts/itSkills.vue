@@ -7,28 +7,41 @@ const skillSections = [
     icons: [
       { icon: "vscode-icons:file-type-python" },
       { icon: "vscode-icons:file-type-go-gopher" },
-      { icon: "vscode-icons:file-type-vue" },
       { icon: "tabler:file-type-sql", style: "color: #15bfd5" },
       { icon: "vscode-icons:file-type-js-official" },
+      { icon: "vscode-icons:file-type-typescript-official" },
       { icon: "catppuccin:powershell" },
       { icon: "vscode-icons:file-type-c" },
       { icon: "vscode-icons:file-type-cpp" },
-      { icon: "devicon:matlab" },
     ],
   },
   {
-    title: "Libraries & Tools",
+    title: "Frameworks & Tools",
     icons: [
       { icon: "devicon:pandas-wordmark" },
       { icon: "vscode-icons:file-type-numpy" },
       { icon: "logos:tensorflow" },
       { icon: "devicon:pytorch" },
-      { icon: "devicon:linux" },
-      { icon: "devicon:redhat" },
-      { icon: "ri:ubuntu-fill", style: "color: #d54515" },
-      { icon: "devicon:git" },
-      { icon: "devicon:qt" },
+      { icon: "simple-icons:fastapi" },
       { icon: "devicon:docker-wordmark" },
+      { icon: "skill-icons:kafka" },
+      { icon: "simple-icons:langchain" },
+      { icon: "devicon:linux" },
+      { icon: "devicon:git" },
+    ],
+  },
+  {
+    title: "Cheminformatics",
+    tags: [
+      "RDKit",
+      "Indigo",
+      "Ketcher",
+      "Open Babel",
+      "SMILES/SMARTS",
+      "SDF/Molfile",
+      "Molecular Descriptors",
+      "Fingerprints",
+      "Markush Structures",
     ],
   },
   {
@@ -37,53 +50,45 @@ const skillSections = [
       { icon: "devicon:oracle" },
       { icon: "devicon:mysql" },
       { icon: "devicon:postgresql" },
-      { icon: "skill-icons:kafka" },
+      { icon: "devicon:mongodb" },
       { icon: "devicon:redis" },
+      { icon: "simple-icons:elasticsearch" },
     ],
   },
 ];
 </script>
 
 <template>
-  <div>
-    <el-row>
-      <el-text class="experience-title" id="technical">TECHNICAL SKILLS</el-text>
-    </el-row>
-    <template v-for="(section, idx) in skillSections" :key="section.title">
-      <el-row>
-        <p class="h3">{{ section.title }}:</p>
-        <span>
+  <section id="technical" class="resume-section">
+    <h2 class="section-title">TECHNICAL SKILLS</h2>
+    <div
+      v-for="section in skillSections"
+      :key="section.title"
+      class="skill-block"
+    >
+      <p class="skill-block-title">{{ section.title }}</p>
+      <div v-if="section.icons" class="skill-icons">
+        <span
+          v-for="item in section.icons"
+          :key="item.icon"
+          class="skill-icon-wrap"
+        >
           <Icon
-            v-for="(item, i) in section.icons"
-            :key="item.icon"
             :icon="item.icon"
-            class="skill-icon"
-            width="40px"
+            width="32"
             v-bind="item.style ? { style: item.style } : {}"
           />
         </span>
-      </el-row>
-      <el-divider v-if="idx < skillSections.length - 1" class="el-divider" />
-    </template>
-  </div>
+      </div>
+      <div v-else-if="section.tags" class="skill-tags">
+        <el-tag
+          v-for="tag in section.tags"
+          :key="tag"
+          effect="plain"
+        >
+          {{ tag }}
+        </el-tag>
+      </div>
+    </div>
+  </section>
 </template>
-
-<style scoped>
-.skill-icon {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.el-divider {
-  margin: 10px 0;
-}
-
-.experience-title {
-  font-family: 'Georgia', 'Times New Roman', Times, serif;
-  font-size: 22pt;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: #222;
-  margin-bottom: 10px;
-}
-</style>
