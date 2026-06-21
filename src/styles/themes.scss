@@ -1,0 +1,129 @@
+@mixin resume-theme(
+  $primary,
+  $primary-light,
+  $accent,
+  $bg,
+  $surface,
+  $tint,
+  $tint-soft,
+  $border,
+  $border-strong,
+  $shadow-rgb,
+  $glow-1,
+  $glow-2,
+  $glow-3,
+  $bg-linear,
+  $grid-rgb,
+  $text: #0a1b3d,
+  $text-muted: #4a6082
+) {
+  --resume-primary: #{$primary};
+  --resume-primary-light: #{$primary-light};
+  --resume-accent: #{$accent};
+  --resume-bg: #{$bg};
+  --resume-surface: #{$surface};
+  --resume-tint: #{$tint};
+  --resume-tint-soft: #{$tint-soft};
+  --resume-border: #{$border};
+  --resume-border-strong: #{$border-strong};
+  --resume-text: #{$text};
+  --resume-text-muted: #{$text-muted};
+  --resume-shadow: 0 12px 36px rgb(#{$shadow-rgb} / 7%);
+  --resume-shadow-hover: 0 18px 42px rgb(#{$shadow-rgb} / 11%);
+  --resume-gradient: linear-gradient(
+    135deg,
+    var(--resume-primary) 0%,
+    var(--resume-primary-light) 55%,
+    var(--resume-accent) 100%
+  );
+  --resume-glow-1: #{$glow-1};
+  --resume-glow-2: #{$glow-2};
+  --resume-glow-3: #{$glow-3};
+  --resume-bg-linear: #{$bg-linear};
+  --resume-grid-rgb: #{$grid-rgb};
+}
+
+/* 深海青 — 青蓝点缀，科研感 */
+:root,
+[data-theme="ocean"] {
+  @include resume-theme(
+    #0e7490,
+    #0891b2,
+    #14b8a6,
+    #f0f9ff,
+    #e0f2fe,
+    #ccfbf1,
+    #f8fafc,
+    #bae6fd,
+    #7dd3fc,
+    10 27 61,
+    rgb(8 145 178 / 12%),
+    rgb(20 184 166 / 10%),
+    rgb(186 230 253 / 14%),
+    linear-gradient(180deg, #f0f9ff 0%, #f8fafc 48%, #f0fdfa 100%),
+    10 27 61
+  );
+}
+
+/* 琥珀金 — 暖金点缀，沉稳专业 */
+[data-theme="amber"] {
+  @include resume-theme(
+    #b45309,
+    #d97706,
+    #f59e0b,
+    #fffbeb,
+    #fef3c7,
+    #fde68a,
+    #fffdf7,
+    #fde68a,
+    #fcd34d,
+    10 27 61,
+    rgb(217 119 6 / 12%),
+    rgb(245 158 11 / 10%),
+    rgb(254 243 199 / 16%),
+    linear-gradient(180deg, #fffbeb 0%, #fffdf7 48%, #fefce8 100%),
+    10 27 61
+  );
+}
+
+/* 鼠尾草 — 翡翠绿点缀，自然科研 */
+[data-theme="sage"] {
+  @include resume-theme(
+    #047857,
+    #059669,
+    #10b981,
+    #ecfdf5,
+    #d1fae5,
+    #a7f3d0,
+    #f0fdf4,
+    #a7f3d0,
+    #6ee7b7,
+    10 27 61,
+    rgb(5 150 105 / 12%),
+    rgb(16 185 129 / 10%),
+    rgb(167 243 208 / 14%),
+    linear-gradient(180deg, #ecfdf5 0%, #f0fdf4 48%, #f7fee7 100%),
+    10 27 61
+  );
+}
+
+/* 靛蓝 — 蓝紫点缀，科技沉稳 */
+[data-theme="indigo"] {
+  @include resume-theme(
+    #1e40af,
+    #3b82f6,
+    #6366f1,
+    #f8fafc,
+    #eff6ff,
+    #dbeafe,
+    #fafbff,
+    #bfdbfe,
+    #93c5fd,
+    10 27 61,
+    rgb(59 130 246 / 12%),
+    rgb(99 102 241 / 10%),
+    rgb(191 219 254 / 14%),
+    linear-gradient(180deg, #f8fafc 0%, #eff6ff 48%, #fafbff 100%),
+    10 27 61
+  );
+}

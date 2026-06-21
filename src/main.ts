@@ -11,6 +11,9 @@ import App from "./App.vue";
 
 import "~/styles/index.scss";
 import "uno.css";
+import { initResumeTheme } from "./composables/theme";
+
+initResumeTheme();
 
 // If you want to use ElMessage, import it.
 import "element-plus/theme-chalk/src/message.scss";

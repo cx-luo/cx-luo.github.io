@@ -106,5 +106,6 @@ const items = [
         <span v-else class="contact-text">{{ item.text }}</span>
       </li>
     </ul>
+    <ThemeSwitcher />
   </aside>
 </template>

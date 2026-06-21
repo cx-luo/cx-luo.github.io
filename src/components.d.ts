@@ -25,6 +25,7 @@ declare module 'vue' {
     OpenSourceProjects: typeof import('./components/layouts/openSourceProjects.vue')['default']
     ProjectPresentation: typeof import('./components/layouts/projectPresentation.vue')['default']
     Summary: typeof import('./components/layouts/summary.vue')['default']
+    ThemeSwitcher: typeof import('./components/ThemeSwitcher.vue')['default']
     WorkExperience: typeof import('./components/layouts/workExperience.vue')['default']
   }
 }
